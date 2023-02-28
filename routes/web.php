@@ -16,9 +16,9 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/product', [ProductController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/product/{product}', [ProductController::class, 'show'])->name('product');
 
 // Admin
-Route::get('/admin/products', [AdminProductContronller::class, 'index']);
-Route::get('/admin/products/edit', [AdminProductContronller::class, 'edit']);
+Route::get('/admin/products', [AdminProductContronller::class, 'index'])->name('admin.product');
+Route::get('/admin/products/edit', [AdminProductContronller::class, 'edit'])->name('admin.product.edit');
