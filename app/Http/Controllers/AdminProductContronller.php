@@ -25,7 +25,7 @@ class AdminProductContronller extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.products_create');
     }
 
     /**
@@ -40,23 +40,12 @@ class AdminProductContronller extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Mostre o formulário para editar o recurso especificado.
      *
-     * @param  int  $id
+     * @param  \App\Models\Product $product
      * @return \Illuminate\Http\Response
      */
-    public function edit($id = null)
+    public function edit(Product $product)
     {
         return view('admin.products_edit');
     }
@@ -65,10 +54,10 @@ class AdminProductContronller extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Product $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Product $product)
     {
         //
     }
@@ -76,10 +65,10 @@ class AdminProductContronller extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Product $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Product $product)
     {
         //
     }
