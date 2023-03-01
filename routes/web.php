@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\AdminProductContronller;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminProductContronller;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 
@@ -17,7 +17,7 @@ use App\Http\Controllers\ProductController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/product/{product}', [ProductController::class, 'show'])->name('product');
+Route::get('/product/{product:slug}', [ProductController::class, 'show'])->name('product');
 
 // Admin
 Route::get('/admin/products', [AdminProductContronller::class, 'index'])->name('admin.product');
